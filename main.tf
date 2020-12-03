@@ -43,7 +43,7 @@ resource "aws_cloudwatch_metric_alarm" "alb_5xx" {
   count = (var.alb_5xx_threshold > 0 && var.enable_alb_metric_alarm) ? 1 : 0
 
   alarm_name        = format("%s-%s-alb-5xx-limit", var.name, var.environment)
-  alarm_description = format("At least ${var.alb_5xx_threshold}% of traffic to the ALB in %s %s is returning 5xx error codes. Does not apply to 5xx errors coming from the backends.", var.name, var.environment)
+  alarm_description = format("At least %s%% of traffic to the ALB in %s %s is returning 5xx error codes. Does not apply to 5xx errors coming from the backends.", var.alb_5xx_threshold, var.name, var.environment)
 
   actions_enabled           = var.actions_enabled
   alarm_actions             = var.actions_alarm
@@ -101,7 +101,7 @@ resource "aws_cloudwatch_metric_alarm" "alb_target_5xx" {
   count = (var.alb_target_5xx_threshold > 0 && var.enable_alb_target_metric_alarm) ? 1 : 0
 
   alarm_name        = format("%s-%s-alb-target-5xx-limit", var.name, var.environment)
-  alarm_description = format("At least ${var.alb_5xx_threshold}% of traffic to the Target(s) behind the ALB in %s %s is returning 5xx error codes.", var.name, var.environment)
+  alarm_description = format("At least %s%% of traffic to the Target(s) behind the ALB in %s %s is returning 5xx error codes. Does not apply to 5xx errors coming from the backends.", var.alb_target_5xx_threshold, var.name, var.environment)
 
   actions_enabled           = var.actions_enabled
   alarm_actions             = var.actions_alarm
