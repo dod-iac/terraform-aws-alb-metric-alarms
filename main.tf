@@ -9,8 +9,8 @@
  * module "alb_metric_alarms" {
  *   source = "dod-iac/alb-mteric-alarms/aws"
  *
- *   name        = var.application
- *   environment = var.environment
+ *   name           = var.application
+ *   environment    = var.environment
  *   alb_arn_suffix = module.alb_web_containers.alb_arn_suffix
  *
  *   actions_alarm             = [var.sns_topic_arn]
