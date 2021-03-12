@@ -1,3 +1,4 @@
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Usage
 
 Creates two metric alarms for use with an ALB
@@ -41,7 +42,7 @@ This project constitutes a work of the United States Government and is not subje
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.13.0 |
+| terraform | >= 0.13 |
 | aws | ~> 3.0 |
 
 ## Providers
@@ -49,6 +50,16 @@ This project constitutes a work of the United States Government and is not subje
 | Name | Version |
 |------|---------|
 | aws | ~> 3.0 |
+
+## Modules
+
+No Modules.
+
+## Resources
+
+| Name |
+|------|
+| [aws_cloudwatch_metric_alarm](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) |
 
 ## Inputs
 
@@ -75,4 +86,4 @@ This project constitutes a work of the United States Government and is not subje
 | alb\_5xx\_metric\_alarm\_id | The ID of the ALB 5XX metric alarm |
 | alb\_target\_5xx\_metric\_alarm\_arn | The ARN of the ALB Target 5XX metric alarm |
 | alb\_target\_5xx\_metric\_alarm\_id | The ID of the ALB Target 5XX metric alarm |
-
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
